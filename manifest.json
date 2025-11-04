@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Arabic English Converter",
+  "version": "1.0.0",
+  "description": "Convert Arabic to English and vice versa using Ctrl+Shift+M",
+  "action": {
+    "default_popup": "extension.html",
+    "default_icon": {
+      "16": "icon128.png",
+      "48": "icon128.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon128.png",
+    "48": "icon128.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["extension.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+  
+}
